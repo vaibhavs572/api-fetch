@@ -30,24 +30,42 @@ async componentDidMount() {
   render() {
     const styleInfo = {
       paddingRight:'10px',
-      textDecoration:'black'
+      textDecoration:'black',
+      backgroundColor: '#dddddd',
+      fontFamily: 'arial, sans-serif'
+      
     }
     
 
         return(
           this.state.isLoaded === false ? <div></div>:
       <div>
-        <ul>
-          <li style={{position:'relative',left:'10vh'}}>
-            
-            <p style={styleInfo}>Name : {this.state.items.name}</p>
-            <p style={styleInfo}>Email : {this.state.items.email}</p>
-            <p style={styleInfo}>Username : {this.state.items.username}</p>
-             <p style={styleInfo}> Address : {this.state.items.address.street}, {this.state.items.address.suite}, {this.state.items.address.city}, {this.state.items.address.zipcode}</p>
-            <p style={styleInfo}> Phone Number : {this.state.items.phone}</p>
-            <p style={styleInfo}> Company Name : {this.state.items.company.name}</p>
-          </li>
-        </ul>
+        <table>
+        <tr>
+    <td>Name</td>
+    <td style={styleInfo}> {this.state.items.name}</td>
+  </tr>
+  <tr>
+  <td>Username</td>
+    <td style={styleInfo}>{this.state.items.username}</td>
+  </tr>
+  <tr>
+  <td>Email</td>
+    <td style={styleInfo}>{this.state.items.email}</td>
+  </tr>
+  <tr>
+  <td>Address</td>
+    <td style={styleInfo}>{this.state.items.address.street}, {this.state.items.address.suite}, {this.state.items.address.city}, {this.state.items.address.zipcode}</td>
+  </tr>
+  <tr>
+  <td>Phone Number</td>
+    <td style={styleInfo}>{this.state.items.phone}</td>
+  </tr>
+  <tr>
+  <td>Company Name</td>
+    <td style={styleInfo}> {this.state.items.company.name}</td>
+  </tr>
+        </table>
       </div>
       )
     }
