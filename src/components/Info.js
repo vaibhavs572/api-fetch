@@ -42,7 +42,7 @@ class Info extends Component {
       position:'relative',
       left:'10vh',
       height:'3vh',
-      width:'20vh',
+      width:'21vh',
       marginTop:'5vh',
       marginBottom:'10vh'
     }
