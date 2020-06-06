@@ -39,7 +39,7 @@ async componentDidMount() {
       <div>
         <ul>
           <li style={{position:'relative',left:'10vh'}}>
-            {/* <span style={styleInfo}>{this.state.items.id}</span> */}
+            
             <p style={styleInfo}>Name : {this.state.items.name}</p>
             <p style={styleInfo}>Email : {this.state.items.email}</p>
             <p style={styleInfo}>Username : {this.state.items.username}</p>
