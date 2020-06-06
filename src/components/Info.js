@@ -60,9 +60,10 @@ class Info extends Component {
       <div >
         <ul>
           <li style={{position:'relative',left:'10vh'}} key={item.id}>
+         <p style={styleInfo}>{item.id}</p>
             <a href="./MoreInfo.js" style={{textDecoration:'none'},{padding:'10px'}} onClick={()=>{sessionStorage.setItem("id",item.id)}}  >{item.name}</a>
-            <span style={styleInfo}>{item.username}</span>
-            <span style={styleInfo}>{item.email}</span>
+            
+            
           </li>
         </ul>
       </div>
