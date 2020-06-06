@@ -19,28 +19,33 @@ async componentDidMount() {
   const response=await fetch(url);
   const data=await response.json();
   
-  console.log(id);
   this.setState({
         isLoaded: true,
         items: data[id],
       })
   }
 
+
+
   render() {
     const styleInfo = {
       paddingRight:'10px',
       textDecoration:'black'
     }
+    
+
         return(
+          this.state.isLoaded === false ? <div></div>:
       <div>
         <ul>
           <li style={{position:'relative',left:'10vh'}}>
             {/* <span style={styleInfo}>{this.state.items.id}</span> */}
-            <span style={styleInfo}>{this.state.items.name}</span>
-            <span style={styleInfo}>{this.state.items.email}</span>
-            <span style={styleInfo}>{this.state.items.username}</span>
-            {/* <span style={styleInfo}> {this.state.items.address}</span> */}
-            <span style={styleInfo}>{this.state.items.phone}</span>
+            <p style={styleInfo}>Name : {this.state.items.name}</p>
+            <p style={styleInfo}>Email : {this.state.items.email}</p>
+            <p style={styleInfo}>Username : {this.state.items.username}</p>
+             <p style={styleInfo}> Address : {this.state.items.address.street}, {this.state.items.address.suite}, {this.state.items.address.city}, {this.state.items.address.zipcode}</p>
+            <p style={styleInfo}> Phone Number : {this.state.items.phone}</p>
+            <p style={styleInfo}> Company Name : {this.state.items.company.name}</p>
           </li>
         </ul>
       </div>
